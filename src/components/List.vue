@@ -1,5 +1,5 @@
 <template>
-    <div class="list">
+    <div class="list" :class="{rotate:listRotateStart}">
         <div class="listheader">
             <p class="list-title">{{ title }}</p>
             <p class="list-counter">total: {{ totalCardInList }}</p>
@@ -7,7 +7,8 @@
         </div>
         <draggable group="cards"
             :list="cards"
-            @end="$emit('change')">
+            @end="$emit('change')"
+            >
         <card v-for="(item, index) in cards"
             :body="item.body"
             :key="item.id"
@@ -42,6 +43,11 @@ export default {
         listIndex: {
             type: Number,
             required: true
+        }
+    },
+    data(){
+        return {
+            listRotateStart: false
         }
     },
     computed: {

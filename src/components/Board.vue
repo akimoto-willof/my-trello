@@ -2,6 +2,9 @@
   <div>
       <header>
           my Trello
+          <div class="image-bg">
+              <button>背景を設定する</button>
+          </div>
       </header>
       <main>
             <p class="info-line">All: {{ totalCardCount }} tasks</p>
@@ -49,7 +52,6 @@ export default {
         movingList(){
             this.$store.dispatch('updateList', { lists: this.lists })
         }
-
     }
 }
 </script>

@@ -188,3 +188,6 @@ html {
   pointer-events: auto;
   cursor: pointer;
 }
+.rotate{
+  transform: rotate(3deg);
+}
